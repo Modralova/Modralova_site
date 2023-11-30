@@ -1,0 +1,1166 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&family=Josefin+Slab:ital,wght@1,300&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+
+$sheet-color: rgba(255, 255, 255, 0.7);
+$sheet-color-project: rgba(255, 255, 255, 0.7);
+
+html {
+    font-size: 15px;
+}
+
+
+* {
+    font-family: 'Barlow', sans-serif;
+    
+
+
+}
+
+$image: url("../images/1440.jpg");
+
+
+
+.App {
+
+    background-image: $image;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    display: grid;
+
+    @media screen and (min-device-width: 320px) and (max-width:600px) and (orientation:portrait) {
+
+        grid-template-columns: 65% 35%;
+        background-position: left 51.3% bottom 0%;
+        grid-template-rows: 50px 10fr 10fr 1fr;
+        grid-template-areas:
+            "  menu    head "
+            "  content timePath"
+            "  content timePath"
+            "  foot    foot"
+        ;
+    }
+
+    @media screen and (min-device-width: 600px) and (max-width:830px) {
+
+        grid-template-columns: 65% 35%;
+        grid-template-rows: 50px 10fr 10fr 1fr;
+        grid-template-areas:
+            "  menu    head "
+            "  content timePath"
+            "  content timePath"
+            "  foot    foot"
+        ;
+
+
+    }
+
+
+
+
+
+    @media screen and (min-device-width: 320px) and (max-width:830px) and (orientation:landscape) {
+
+        grid-template-rows: 50px 1fr 1fr 10%;
+        grid-template-columns: 70% 30%;
+        grid-template-areas:
+            "  menu    head "
+            "  content timePath"
+            "  content timePath"
+            "  foot    foot"
+    }
+
+    @media screen and (min-device-width: 830px) and (max-width:1550px) and (orientation:landscape) {
+
+
+        grid-template-rows: 50px 10fr 10fr 1fr;
+        grid-template-columns: 10% 65% 25%;
+        grid-template-areas:
+            " menu  head    head "
+            " aside content timePath"
+            " aside content timePath"
+            " foot  foot        foot"
+        ;
+    }
+
+    @media screen and (min-device-width: 830px) and (max-width:1550px) and (max-height:400px) and (orientation:landscape) {
+
+
+        grid-template-rows: 50px 5fr 5fr 10%;
+        grid-template-columns: 70% 30%;
+        grid-template-areas:
+            "  menu    head "
+            "  content timePath"
+            "  content timePath"
+            "  foot    foot"
+        ;
+
+    }
+
+    .menu {
+        grid-area: menu;
+        background-image: linear-gradient(90deg, rgba(36, 17, 104, 1), rgba(0, 0, 0, 0.4));
+
+
+        align-content: center;
+        border: none;
+
+
+        /* modrolava Button */
+
+        .Btn:hover {
+            .list {
+                display: block;
+            }
+        }
+
+
+
+        .Btn {
+
+            #navButton {
+                padding: 16px;
+                margin-left: 20px;
+                background-color: rgba(52, 20, 162, 0);
+                color: #EB9602;
+
+                @media screen and (min-device-width: 320px) and (max-width:600px) and (orientation:portrait) {
+                    padding: 16px;
+                }
+
+                @media screen and (min-device-width: 600px) and (max-width:830px) {}
+
+
+                @media screen and (min-device-width: 320px) and (max-width:830px) and (orientation:landscape) {
+                    padding: 16px;
+                }
+
+                @media screen and (min-device-width: 830px) and (max-width:1550px) and (orientation:landscape) {
+                    padding: 16px;
+                }
+
+                @media screen and (min-device-width: 830px) and (max-width:1550px)and(max-height:400px) and (orientation:landscape) {
+                    padding: 16px;
+                }
+
+                font-size: 1rem;
+                border: none;
+                cursor: pointer;
+                position: relative;
+            }
+
+            #navButton:hover {
+                color: #BA7A0B;
+            }
+
+            #navButton:active {
+
+                transform: scale(1.1);
+            }
+
+            .list {
+                display: none;
+                left: 65px;
+                position: absolute;
+                background-color: rgba(235, 150, 2, 0.8);
+                /*kolor list*/
+                min-width: 130px;
+
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                /*cień  + alfa*/
+                z-index: 2;
+
+
+                a {
+                    color: black;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    text-align: center;
+
+
+                    display: block;
+
+
+                }
+
+
+                a:hover {
+                    background-color: rgba(237, 165, 40, 0.3);
+                }
+
+                a:active {
+
+                    transform: scale(.7);
+                }
+
+            }
+        }
+    }
+
+    .head {
+        grid-area: head;
+        background-image: linear-gradient(100deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+        border: none;
+        font-size: 20px;
+        padding: 14px;
+        text-align: center;
+
+        #loginBtn {
+
+            background-color: rgba(52, 20, 162, 0);
+            color: #EB9602;
+
+            @media screen and (min-device-width: 830px) and (max-width:1550px) {
+                padding: 16px;
+                right: 18%;
+            }
+
+            @media screen and (min-device-width: 320px) and (max-width:600px) and (orientation:portrait) {
+
+                padding: 16px;
+                right: 10%;
+            }
+
+            @media screen and (min-device-width: 830px) and (max-width:1550px) and (orientation:landscape) {
+                padding: 16px;
+                right: 17%;
+            }
+
+
+            @media screen and (min-device-width: 830px) and (max-width:1550px)and(max-height:400px) and (orientation:landscape) {
+
+
+                padding: 16px;
+                right: 6%;
+            }
+
+
+
+
+            font-size: 1rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            //right: 175px;
+            top: 0px;
+
+            &:active {
+
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .timePath {
+        grid-area: timePath;
+        background-color: rgba(0, 0, 0, 0);
+        text-align: center;
+        border: none;
+
+
+        .projects {
+
+            font-size: 1rem;
+            box-sizing: border-box;
+            // align-content: right;
+            color: black;
+            //margin: 0px 5%;
+
+
+            .titleStrip {
+
+
+
+                background-image: linear-gradient(90deg, rgba(36, 17, 104, 0.1), rgba(36, 17, 104, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2), rgba(36, 17, 104, 0.1));
+                //background-color: rgba(36, 17, 104, 0.2);
+                margin: 20px auto;
+                padding-top: 1px;
+                padding-bottom: 1px;
+
+
+                .projectsTitle {
+                    text-align: left;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: #EB9602;
+
+                    @media screen and (min-device-width: 320px) and (max-width:830px) {
+                        font-size: .9rem;
+                        font-weight: 400;
+                        margin: 2%;
+                    }
+
+                    padding-left: 35px;
+
+                }
+
+            }
+
+            .projList {
+
+                overflow: auto;
+                margin: 0 25% 0 0%;
+
+                @media screen and (min-device-width: 320px) and (max-width:600px) {
+
+                    .TaS {
+                        font-size: 1.2em;
+                    }
+                }
+
+                @media screen and (min-device-width: 320px) and (max-width:600px)and(orientation:portrait) {
+
+                    height: 577px;
+                    margin: 20px 10%;
+                    width: 80%;
+                    font-size: 0.5rem;
+                }
+
+                @media screen and (min-device-width: 320px) and (max-width:600px)and(orientation:landscape) {
+
+                    margin-top: 30px;
+                    height: 410px;
+
+
+                }
+
+
+
+
+                @media screen and (min-device-width: 320px) and (max-width:830px) and (orientation:landscape) {
+
+                    width: 70%;
+                }
+
+                @media screen and (min-device-width: 600px) and (max-width:830px)and(orientation:landscape) {
+                    //    width: 80%;
+                    font-size: 0.5rem;
+                    height: 515px;
+                }
+
+                @media screen and (min-device-width: 830px) and (max-width:1550px) and (orientation:landscape) {
+
+                    height: 465px;
+                    margin: 0px 25% 0px 0%;
+                    font-size: 0.6rem;
+
+                    .TaS {
+                        font-size: 1.2em;
+                    }
+                }
+
+                @media screen and (min-device-width: 320px) and (max-width:830px) and (max-height:400px) and (orientation:landscape) {
+                    height: 150px;
+                    margin: 0px 0px 0px 12%;
+                }
+
+
+
+
+
+    
+
+                @media screen and (min-device-width: 830px) and (max-width:1550px) and (max-height:800px) and (orientation:landscape) {
+
+                    height: 505 px;
+                }
+
+
+
+
+                //margin: 0px;
+
+                div[id*="project"] {
+                    a {
+                        text-decoration: none;
+                        background-color: rgba(255, 255, 255, 0);
+                        color: black;
+
+                        .theProject {
+                            background-color: rgba(255, 255, 255, 0);
+                            //font-size: 0.5rem;  //@mediaquerried
+                            font-weight: 500;
+                        }
+                    }
+
+
+
+                    margin-bottom: 2%;
+                    padding: 10% 10%;
+                    background-color: $sheet-color-project;
+                    border-radius: 3px;
+
+                    &:active {
+
+                        transform: scale(0.98);
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        grid-area: content;
+        background-color: rgba(36, 17, 104, 0);
+        text-align: center;
+        border: none;
+
+        /* viev LoginForm  */
+
+        .LoginForm {
+            position: fixed;
+            top: 15%;
+
+            //left: 35%;//@querried
+            @media screen and (min-device-width: 320px) and (max-width:830px) {
+                left: 5%;
+            }
+
+            @media screen and (orientation: landscape) {
+                left: 25%;
+                top: 9%;
+            }
+
+            @media screen and (min-device-width: 830px) and (max-width:1550px) and (orientation:landscape) {
+                left: 35%;
+                top: 15%;
+            }
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            label {
+                color: #BA7A0B;
+            }
+        }
+
+        .contact {
+
+            @media screen and (min-device-width: 320px) and (max-width:830px)and (orientation:landscape) {
+
+                margin: 60px auto;
+                padding: 1%;
+                font-size: 0.7rem;
+                width: 20%;
+                left: 14%;
+                bottom: 15%;
+            }
+
+            @media screen and (min-device-width: 320px) and (max-width:830px)and (orientation:portrait) {
+
+                margin: 60px auto;
+                font-size: 0.7rem;
+                left: 9%;
+                bottom: 0%;
+            }
+
+            @media screen and (min-device-width: 830px) and (max-width:1550px) and (orientation:landscape) {
+
+                font-size: .8rem;
+                width: 20%;
+                left: 35%;
+                padding: 1%;
+
+            }
+
+            @media screen and (min-device-width: 830px) and (max-width:1550px) and(max-height:400px)and (orientation:landscape) {
+
+                margin: 60px auto;
+                padding: 1%;
+                font-size: 0.7rem;
+                width: 20%;
+                left: 13%;
+                bottom: 10%;
+
+            }
+
+
+
+            font-size: 1rem;
+            background-color: $sheet-color ;
+            border-radius: 3px;
+            ;
+
+            width: 50%;
+
+            position: fixed;
+            left: 15%;
+            bottom: 5%;
+
+            p {
+                padding: 5% auto;
+            }
+
+        }
+
+        /* view Title */
+
+        .about,
+        .offer {
+
+            font-size: 1rem;
+
+            .offerText,
+            .aboutText {
+                width: 65%;
+                height: 650px;
+                overflow: auto;
+
+                background-color: $sheet-color;
+                margin: 0px auto;
+                padding: 10px 15%;
+                text-align: justify;
+                line-height: 1.5em;
+                hyphens: auto;
+                -webkit-hyphens: auto;
+                word-spacing: -0.05em;
+
+
+
+
+
+
+                @media screen and (max-width:830px) and (orientation:portrait) {
+                    width: 65%;
+
+                }
+
+                width: 65%;
+                height: 600px;
+                overflow: auto;
+                background-color: $sheet-color;
+                text-align: justify;
+
+                @media screen and (min-device-width: 320px) and (max-width:830px) {
+                    width: 80%;
+                    font-size: 0.8em;
+                }
+
+                @media screen and (min-device-width: 320px) and (max-width:600px)and(orientation:portrait) {
+                    width: 80%;
+                    font-size: 0.8em;
+                    height: 680px;
+                }
+
+
+
+                @media screen and (min-device-width: 320px) and (max-width:830px) and (orientation:landscape) {
+                    height: 510px;
+                    width: 60%;
+                    padding: 10px 10%;
+                    margin: 0 23%;
+                }
+
+
+
+
+
+                @media screen and (min-device-width: 830px) and (max-width:1550px) and (orientation:landscape) {
+                    width: 65%;
+                    height: 610px;
+                    line-height: 1.6em;
+                    padding: 10px 12% 50px 12%;
+                    font-size: 1em;
+                    margin: 0px auto 0px 12%;
+
+                }
+
+                @media screen and (min-device-width: 320px) and (max-width:830px) and (max-height:400px) and (orientation:landscape) {
+
+                    height: 280px;
+                    margin: 0px 27% 0px 23%;
+                }
+
+
+
+
+
+                .offerTitle,
+                .aboutTitle {
+                    font-size: 1.3rem;
+
+                    @media screen and (orientation:portrait) {
+                        font-size: 1rem;
+                    }
+
+                    padding-top: 0px auto;
+                    margin-top: 20px auto;
+                    color: black;
+                }
+
+                .txt {
+
+                    text-indent: 2em;
+                    display: inline-block;
+
+                }
+
+                .txt::first-letter {
+
+                    font-size: 2.1em;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .Container {
+
+            margin: 80px 2% 0px 10%;
+
+            article {
+
+                font-size: 1rem;
+                width: 80%;
+                height: 610px;
+                overflow: auto;
+                text-align: left;
+                color: rgba(0, 0, 0, 1.0);
+                background-color: $sheet-color;
+                margin: 0% 0% 0% 10%;
+                padding: 5% 10%;
+
+
+
+                @media screen and (min-device-width: 830px) and (max-width:1550px) and (orientation:landscape) {
+
+                    margin: 30px auto;
+                    border-radius: 2px;
+                    width: 60%;
+                    height: 500px;
+                }
+
+                @media screen and (min-device-width: 320px) and (max-width:600px)and(orientation:portrait) {
+
+                    margin: 30px auto;
+                    font-size: 0.8rem;
+                    border-radius: 3px;
+                    width: 80%;
+                    height: 630px;
+                }
+
+
+
+                @media screen and (min-device-width: 600px) and (max-width:830px)and(orientation:landscape) {
+
+                    font-size: 0.6em;
+                    width: 60%;
+                    height: 490px;
+
+                    .program,
+                    .links,
+                    .cast {
+
+                        text-align: left;
+                        margin-bottom: 30px;
+
+
+                    }
+
+                    @media screen and (min-device-width: 830px) and (max-width:1550px) and (orientation:landscape) {
+
+                        margin: 80px 2% 0px 10%;
+                    }
+
+
+
+                    .cast {
+
+                        .performer {
+                            line-height: .5em;
+                        }
+                    }
+
+                }
+
+                @media screen and (min-device-width: 320px) and (max-width:830px) and (max-height:400px) and (orientation:landscape) {
+
+                    margin: 30px auto;
+                    border-radius: 3px;
+                    height: 200px;
+                    margin: 0% 0% 0% 10%;
+                }
+
+
+                .timeAndSpace {
+                    p {
+                        margin-bottom: 30px;
+                        text-align: left;
+
+                        font-size: 0.9em;
+
+                        @media screen and (min-device-width: 320px) and (max-width:600px)and(orientation:portrait) {
+
+                            font-size: 0.7em;
+                        }
+                    }
+                }
+
+                .projectName {
+
+                    margin: auto;
+
+                    #projectHeader {
+
+                        @media screen and (min-device-width: 320px) and (max-width:600px)and(orientation:portrait) {
+
+                            font-size: 0.9em;
+                        }
+
+                        text-align: center;
+                        font-size: 1.2em;
+                        font-weight: 500;
+                    }
+
+
+                    #sessionHeader {
+
+                        @media screen and (min-device-width: 320px) and (max-width:600px)and(orientation:portrait) {
+
+
+                            font-size: 0.7em;
+
+                        }
+
+                        text-align: center;
+                    }
+
+                }
+
+
+
+                .program {
+
+                    .perfoHeader {
+
+                        @media screen and (min-device-width: 320px) and (max-width:600px)and(orientation:portrait) {
+
+                            font-size: 0.7em;
+                        }
+                    }
+
+                    .pieceTitle {
+                        font-weight: 500;
+                    }
+
+                    p {
+                        font-size: 1em;
+
+                        .piece {
+
+
+                            font-size: 0.8em;
+
+                            em {
+
+                                font-size: 1.3em;
+                            }
+                        }
+                    }
+                }
+
+
+                .links {
+
+                    p#linksHeader {
+
+
+
+                        @media screen and (min-device-width: 320px) and (max-width:600px)and(orientation:portrait) {
+
+                            font-size: 0.7em;
+                        }
+                    }
+
+                    .link {
+                        a {
+
+                            text-decoration: none;
+                            /* color:#BA7A0B; */
+                            color: blue
+                        }
+                    }
+
+
+
+                }
+
+
+                .cast {
+                    p {
+                        .castHeader {
+
+                            @media screen and (min-device-width: 320px) and (max-width:600px)and(orientation:portrait) {
+                                font-size: 0.2em;
+                            }
+
+                            line-height: .5em;
+                            font-size: 0.9em;
+                        }
+                    }
+
+                    .performer {
+                        @media screen and (min-device-width: 320px) and (max-width:600px)and(orientation:portrait) {
+                            font-size: .7em;
+                        }
+
+                        line-height: 2em;
+                        font-weight: 500;
+                        font-size: 1em;
+                    }
+                }
+
+                .memo {
+
+                    text-indent: 1em;
+                    margin: 30px;
+                    text-align: justify;
+
+                    em {
+
+                        font-weight: 500;
+                        font-size: 0.7em;
+                        line-height: 1em;
+
+                    }
+
+                    p::first-letter {
+
+                        font-size: 2.1em;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+        .CV_select {
+
+            background-color: rgba(175, 196, 135, 0);
+            border-radius: 5px;
+
+            .choose {
+
+                display: inline;
+                text-align: center;
+                padding-bottom: 20px auto;
+
+                .cvTitle {
+                   margin: 0px;
+                    margin-bottom: 10px;
+                    color: white;
+                    font-size: 2rem;
+                    font-weight: 900;
+                    @media screen and (min-device-width: 320px) and (max-width:600px) and (orientation:portrait) {
+                        margin-top: 40px;
+                    }
+                    @media screen and (min-device-width: 830px) and (max-width:1550px) and (orientation:landscape) {
+                        margin-top: 20px;
+                    }
+                    @media screen and (min-device-width: 830px) and (max-width:1550px) and (max-height:400px) and (orientation:landscape) {
+                      
+                        margin-top: 5px;
+                    }
+                }
+                
+
+                #select {
+                    color: white;
+                    font-weight: 500;
+                    border: none;
+                    background-color: rgba(175, 196, 135, 0.0);
+
+                    li[role="option"] {
+                        color: #3513A1;
+                    }
+                   
+                }
+            }
+
+            .CV {
+
+                font-size: 1rem;
+                width: 60%;
+                // height: 500px;
+
+                @media screen and (min-device-width: 320px) and (max-width:1550px) {
+                    height: 240px;
+
+                }
+
+                @media screen and (min-device-width: 320px) and (max-width:830px) and (orientation:portrait) {
+                    height: 200;
+                    width: 80%;
+                }
+
+                @media screen and (max-width:830px) {
+                    font-size: 0.8rem;
+                    width: 60%;
+                }
+
+                @media screen and (min-device-width: 320px) and (max-width:600px) and (orientation:portrait) {
+                    height: 470px;
+                    width: 80%;
+                }
+
+                @media screen and (max-width:830px) and (orientation:portrait) {
+
+                    width: 80%;
+                }
+
+                @media screen and (min-device-width: 320px) and (max-width:830px) and (max-height:400px) and (orientation:landscape) {
+
+                    height: 180px;
+                    margin: 0px 25%;
+                }
+
+                @media screen and (min-device-width: 830px) and (max-width:1550px) and (orientation:landscape) {
+
+                    height: 180px;
+                    width: 55%;
+                    margin: 10px 4% 0px 26%;
+                }
+
+                overflow: auto;
+
+                padding-bottom: 20px;
+
+                margin: 5px auto;
+
+                .property {
+
+                    text-align: left;
+                    border-radius: 2px;
+                    padding: 1%;
+                    margin: 2%;
+                    color: black;
+                    word-wrap: "break-word";
+
+
+
+                    div:first-child {
+                        font-weight: 900;
+                        font-size: 1em;
+                        text-align: left;
+
+                    }
+
+                    div.links {
+                        p {
+
+                            font-size: 0.7em;
+                            font-weight: 500;
+                        }
+
+                        .linkList {
+                            .linkBox {
+                                a {
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+
+                    div[id*="obj"] {
+
+                        padding: 10px;
+                        margin: 10px;
+                        color: black;
+                        word-wrap: "break-word";
+
+
+                        .item {
+                            font-size: 0.7em;
+                        }
+
+
+                        .composers,
+                        .performers,
+                        .skills,
+                        .frameworks,
+                        .modules,
+                        .libraries,
+                        .intentions,
+                        .use,
+                        .useEnv,
+                        .DAW,
+                        .current,
+                        .instruments {
+                            font-size: 0.7em;
+                            font-weight: 500;
+                        }
+
+                        p[id*="email"],
+                        p[id*="mobile"],
+                        p[id*="city"] {
+
+                            font-size: 0.8em;
+                        }
+
+                        p[id*="employer"],
+                        p[id*="school"],
+                        p[id*="department"],
+                        p[id*="course"],
+                        [id*="lingua"] {
+                            font-style: italic;
+                            font-weight: 500;
+                            font-size: 1em;
+                        }
+
+
+                        p[id*="department"] {
+                            font-size: 0.8em;
+                        }
+
+
+                        p[id*="period"],
+                        p[id*="withinYears"] {
+
+                            font-size: 0.9em;
+                        }
+
+                        p[id*="workplace"] {
+
+                            font-size: 0.8em;
+
+                        }
+
+                        [id*="level"] {
+
+                            font-size: 0.8em;
+                        }
+                    }
+                }
+            }
+        }
+
+        #recordings {
+
+            //    #recordings_obj_0{
+            //     position: fixed;
+            //    }
+
+            text-align: left;
+            border-radius: 2px;
+            padding: 1%;
+            margin: 40px auto;
+            color: black;
+            word-wrap: "break-word";
+
+            background-color: $sheet-color;
+            width: 80%;
+            height: 500px;
+            overflow: auto;
+
+            div[id*="obj"] {
+
+                padding: 10px;
+                margin: 10px;
+                color: black;
+
+            }
+
+            @media screen and (min-device-width: 320px) and (max-width:830px) and (max-height:400px) and (orientation:landscape) {
+
+                font-size: .8rem;
+                height: 213px;
+                width: 60%;
+                margin: 40px 25% auto 25%;
+            }
+
+
+
+            @media screen and (min-device-width: 320px) and (max-width:830px) and (orientation:portrait) {
+                font-size: 0.7rem;
+                margin: 60px auto;
+                height: 597px;
+
+            }
+
+            @media screen and (min-device-width: 830px) and (max-width:1550px) and (orientation:landscape) {
+
+
+                height: 536px;
+                width: 55%;
+                margin: 40px 4% 0px 26%;
+            }
+
+            @media screen and (min-device-width: 320px) and (max-width:830px) and (max-height:400px) and (orientation:landscape) {
+
+                height: 213px;
+                font-size: 0.8rem;
+
+                div[id*="obj"] {
+
+
+
+                    p {
+                        // padding: 10px;
+                        margin: 3px 0px;
+                    }
+
+                }
+
+            }
+
+
+
+            div.links {
+                p {
+
+                    font-size: 0.7em;
+                    font-weight: 500;
+                }
+
+                .linkList {
+                    .linkBox {
+                        a {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .foot {
+        grid-area: foot;
+        background-color: rgba(0, 0, 0, 0);
+        color: #BA7A0B;
+        border: none;
+        font-size: 0.7rem;
+        align-content: center;
+        position: relative;
+        left: 20px;
+
+
+        .footer {
+
+            @media screen and (min-device-width: 320px) and (max-width:600px)and(orientation:portrait) {
+                // color: #BA7A0B;
+                text-align: right;
+                position: absolute;
+                // font-size: 0.7em;
+                bottom: 10px;
+                right: 15%;
+            }
+        }
+
+    }
+
+    .aside {
+
+
+        grid-area: aside;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+    }
+}

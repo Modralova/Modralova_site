@@ -1,0 +1,70 @@
+{
+  "name": "modralova",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.12.3",
+    "@mui/styles": "^5.12.3",
+    "@mui/system": "^5.12.3",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "browserify-fs": "^1.0.0",
+    "browserify-cipher": "^1.0.1",
+    "crypto-browserify": "^3.12.0",
+    "stream-browserify": "^3.0.0",
+    "axios": "^1.4.0",
+    "buffer": "^6.0.3",
+    "cryptr": "^6.2.0",
+    "react": "^18.2.0",
+    "redux": "^4.2.1",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^5.3.4",
+    "react-image-and-background-image-fade": "^1.0.8",
+    "react-redux": "^8.1.0",
+    "react-scripts": "5.0.1",
+    "uuid": "^9.0.0",
+    "uuidv4": "^6.2.13",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    
+    "prestart": "node ./scripts/prepare_content.js",
+    "start": "craco start  ",
+    "prebuild": "node ./scripts/encrypt.js",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@craco/craco": "^7.1.0",
+    "@types/node": "^20.3.2",
+    "dotenv": "^16.2.0",
+    "hyphen": "^1.6.6",
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "svg-url-loader": "^8.0.0"
+  }
+}

@@ -1,0 +1,1059 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&family=Josefin+Slab:ital,wght@1,300&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+html {
+  font-size: 15px;
+}
+
+* {
+  font-family: 'Barlow', sans-serif;
+}
+
+#root .background {
+  background-image: url("./images/1440.jpg");
+  background-color: rgba(255, 255, 255, 0);
+  position: fixed;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) and (orientation: portrait) {
+  #root .background {
+    background-position: left 53% bottom 0%;
+  }
+}
+
+#root .background .App {
+  height: 100%;
+  width: 100%;
+  display: grid;
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) and (orientation: portrait) {
+  #root .background .App {
+    grid-template-columns: 65% 35%;
+    background-position: left 53% bottom 0%;
+    grid-template-rows: 50px 10fr 10fr 1fr;
+    grid-template-areas: "  menu    head " "  content timePath" "  content timePath" "  foot    foot";
+  }
+}
+
+@media screen and (min-device-width: 600px) and (max-width: 830px) {
+  #root .background .App {
+    grid-template-columns: 65% 35%;
+    grid-template-rows: 50px 10fr 10fr 1fr;
+    grid-template-areas: "  menu    head " "  content timePath" "  content timePath" "  foot    foot";
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 830px) and (orientation: landscape) {
+  #root .background .App {
+    grid-template-rows: 50px 40% 35% 1fr;
+    grid-template-columns: 70% 30%;
+    grid-template-areas: "  menu    head " "  content timePath" "  content timePath" "  foot    foot";
+  }
+}
+
+@media screen and (min-device-width: 830px) and (max-width: 1550px) and (orientation: landscape) {
+  #root .background .App {
+    grid-template-rows: 50px 8.2fr 8.4fr 1fr;
+    grid-template-columns: 10% 65% 25%;
+    grid-template-areas: " menu  head    head " " aside content timePath" " aside content timePath" " foot  foot        foot";
+  }
+}
+
+@media screen and (min-device-width: 830px) and (max-width: 1550px) and (max-height: 400px) and (orientation: landscape) {
+  #root .background .App {
+    grid-template-rows: 50px 1fr 1fr 10%;
+    grid-template-columns: 70% 30%;
+    grid-template-areas: "  menu    head " "  content timePath" "  content timePath" "  foot    foot";
+  }
+}
+
+#root .background .App .menu {
+  grid-area: menu;
+  background-image: linear-gradient(90deg, #241168, rgba(0, 0, 0, 0.1));
+  align-content: center;
+  border: none;
+  /* modrolava Button */
+}
+
+#root .background .App .menu .Btn:hover .list {
+  display: block;
+}
+
+#root .background .App .menu .Btn #navButton {
+  margin-left: 25px;
+  background-color: rgba(52, 20, 162, 0);
+  color: #EB9602;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) and (orientation: portrait) {
+  #root .background .App .menu .Btn #navButton {
+    margin-left: 15px;
+    padding: 16px;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 830px) and (orientation: landscape) {
+  #root .background .App .menu .Btn #navButton {
+    padding: 16px;
+  }
+}
+
+@media screen and (min-device-width: 830px) and (max-width: 1550px) and (orientation: landscape) {
+  #root .background .App .menu .Btn #navButton {
+    padding: 16px;
+  }
+}
+
+@media screen and (min-device-width: 830px) and (max-width: 1550px) and (max-height: 400px) and (orientation: landscape) {
+  #root .background .App .menu .Btn #navButton {
+    padding: 16px;
+  }
+}
+
+#root .background .App .menu .Btn #navButton:hover {
+  color: #BA7A0B;
+}
+
+#root .background .App .menu .Btn #navButton:active {
+  transform: scale(1.1);
+}
+
+#root .background .App .menu .Btn .list {
+  display: none;
+  left: 65px;
+  position: absolute;
+  background-color: rgba(235, 150, 2, 0.8);
+  /*kolor list*/
+  min-width: 130px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  /*cień  + alfa*/
+  z-index: 2;
+}
+
+#root .background .App .menu .Btn .list a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+#root .background .App .menu .Btn .list a:hover {
+  background-color: rgba(237, 165, 40, 0.3);
+}
+
+#root .background .App .menu .Btn .list a:active {
+  transform: scale(0.7);
+}
+
+#root .background .App .head {
+  grid-area: head;
+  background-image: linear-gradient(100deg, rgba(0, 0, 0, 0.1), transparent);
+  border: none;
+  font-size: 20px;
+  padding: 14px;
+  text-align: center;
+}
+
+#root .background .App .head #loginBtn {
+  background-color: rgba(52, 20, 162, 0);
+  color: #EB9602;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+}
+
+@media screen and (min-device-width: 830px) and (max-width: 1550px) {
+  #root .background .App .head #loginBtn {
+    padding: 16px;
+    right: 18%;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) and (orientation: portrait) {
+  #root .background .App .head #loginBtn {
+    padding: 16px;
+    right: 10%;
+  }
+}
+
+@media screen and (min-device-width: 830px) and (max-width: 1550px) and (orientation: landscape) {
+  #root .background .App .head #loginBtn {
+    padding: 16px;
+    right: 17%;
+  }
+}
+
+@media screen and (min-device-width: 830px) and (max-width: 1550px) and (max-height: 400px) and (orientation: landscape) {
+  #root .background .App .head #loginBtn {
+    padding: 16px;
+    right: 6%;
+  }
+}
+
+#root .background .App .head #loginBtn:active {
+  transform: scale(1.1);
+}
+
+#root .background .App .timePath {
+  grid-area: timePath;
+  background-color: transparent;
+  text-align: center;
+  border: none;
+}
+
+#root .background .App .timePath .projects {
+  font-size: 1rem;
+  box-sizing: border-box;
+  color: black;
+}
+
+#root .background .App .timePath .projects .titleStrip {
+  background-image: linear-gradient(90deg, rgba(36, 17, 104, 0.102), rgba(36, 17, 104, 0.8), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1), rgba(36, 17, 104, 0));
+  margin: 20px auto;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+#root .background .App .timePath .projects .titleStrip .projectsTitle {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #EB9602;
+  padding-left: 57px;
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 830px) {
+  #root .background .App .timePath .projects .titleStrip .projectsTitle {
+    font-size: .9rem;
+    font-weight: 400;
+    margin: 2%;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) and (orientation: portrait) {
+  #root .background .App .timePath .projects .titleStrip .projectsTitle {
+    padding-left: 25px;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 830px) and (max-height: 400px) and (orientation: landscape) {
+  #root .background .App .timePath .projects .titleStrip .projectsTitle {
+    padding-left: 45px;
+  }
+}
+
+#root .background .App .timePath .projects .projList {
+  overflow: auto;
+  margin: 0 25% 0 0%;
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) {
+  #root .background .App .timePath .projects .projList .TaS {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) and (orientation: portrait) {
+  #root .background .App .timePath .projects .projList {
+    height: 577px;
+    margin: 20px 3%;
+    width: 80%;
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) and (orientation: landscape) {
+  #root .background .App .timePath .projects .projList {
+    margin-top: 30px;
+    height: 410px;
+  }
+}
+
+@media screen and (min-device-width: 830px) and (max-width: 1550px) and (orientation: landscape) {
+  #root .background .App .timePath .projects .projList {
+    height: 445px;
+    margin: 0px 15% 0px 0%;
+    font-size: 0.6rem;
+    width: 75%;
+  }
+  #root .background .App .timePath .projects .projList .TaS {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 830px) and (max-height: 400px) and (orientation: landscape) {
+  #root .background .App .timePath .projects .projList {
+    font-size: 0.5rem;
+    height: 120px;
+    width: 70%;
+    margin: 0px 0px 0px 12%;
+  }
+}
+
+#root .background .App .timePath .projects .projList div[id*="project"] {
+  margin-bottom: 2%;
+  padding: 10% 10%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+}
+
+#root .background .App .timePath .projects .projList div[id*="project"] a {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0);
+  color: black;
+}
+
+#root .background .App .timePath .projects .projList div[id*="project"] a .theProject {
+  background-color: rgba(255, 255, 255, 0);
+  font-weight: 500;
+}
+
+#root .background .App .timePath .projects .projList div[id*="project"]:hover {
+  transform: scale(1);
+}
+
+#root .background .App .timePath .projects .projList div[id*="project"]:active {
+  transform: scale(0.98);
+}
+
+#root .background .App .content {
+  grid-area: content;
+  background-color: rgba(36, 17, 104, 0);
+  text-align: center;
+  border: none;
+  /* viev LoginForm  */
+  /* view Title */
+}
+
+#root .background .App .content .LoginForm {
+  position: fixed;
+  top: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 830px) {
+  #root .background .App .content .LoginForm {
+    left: 5%;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  #root .background .App .content .LoginForm {
+    left: 25%;
+    top: 9%;
+  }
+}
+
+@media screen and (min-device-width: 830px) and (max-width: 1550px) and (orientation: landscape) {
+  #root .background .App .content .LoginForm {
+    left: 35%;
+    top: 15%;
+  }
+}
+
+#root .background .App .content .LoginForm label {
+  color: white;
+}
+
+#root .background .App .content .LoginForm #loginButton {
+  color: black;
+  font-weight: 700;
+}
+
+#root .background .App .content .contact {
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+  width: 50%;
+  position: fixed;
+  left: 15%;
+  bottom: 5%;
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 830px) and (orientation: landscape) {
+  #root .background .App .content .contact {
+    margin: 60px auto;
+    padding: 1%;
+    font-size: 0.7rem;
+    width: 20%;
+    left: 14%;
+    bottom: 15%;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 830px) and (orientation: portrait) {
+  #root .background .App .content .contact {
+    margin: 0px auto;
+    font-size: 0.7rem;
+    left: 8%;
+    bottom: 5%;
+  }
+}
+
+@media screen and (min-device-width: 830px) and (max-width: 1550px) and (orientation: landscape) {
+  #root .background .App .content .contact {
+    font-size: .8rem;
+    width: 20%;
+    left: 35%;
+    padding: 1%;
+  }
+}
+
+@media screen and (min-device-width: 830px) and (max-width: 1550px) and (max-height: 400px) and (orientation: landscape) {
+  #root .background .App .content .contact {
+    margin: 60px auto;
+    padding: 1%;
+    font-size: 0.7rem;
+    width: 20%;
+    left: 13%;
+    bottom: 10%;
+  }
+}
+
+#root .background .App .content .contact p {
+  padding: 5% auto;
+}
+
+#root .background .App .content .about,
+#root .background .App .content .offer {
+  font-size: 1rem;
+}
+
+#root .background .App .content .about .offerText,
+#root .background .App .content .about .aboutText,
+#root .background .App .content .offer .offerText,
+#root .background .App .content .offer .aboutText {
+  width: 65%;
+  height: 650px;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 0px 0px 0px 20px;
+  padding: 10px 13% 20px 13%;
+  white-space: pre-wrap;
+  line-height: 1.5em;
+  hyphens: manual;
+  -moz-hyphens: manual;
+  -webkit-hyphens: manual;
+  word-spacing: -0.05em;
+  text-align: justify;
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) and (orientation: portrait) {
+  #root .background .App .content .about .offerText,
+  #root .background .App .content .about .aboutText,
+  #root .background .App .content .offer .offerText,
+  #root .background .App .content .offer .aboutText {
+    white-space: pre-wrap;
+    hyphens: manual;
+    -moz-hyphens: manual;
+    -webkit-hyphens: manual;
+    line-height: 1.5em;
+    word-spacing: -0.05em;
+    width: 72%;
+    font-size: 0.8em;
+    height: 680px;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 830px) and (orientation: landscape) {
+  #root .background .App .content .about .offerText,
+  #root .background .App .content .about .aboutText,
+  #root .background .App .content .offer .offerText,
+  #root .background .App .content .offer .aboutText {
+    height: 510px;
+    width: 60%;
+    padding: 10px 10%;
+    margin: 0 23%;
+  }
+}
+
+@media screen and (min-device-width: 830px) and (max-width: 1550px) and (orientation: landscape) {
+  #root .background .App .content .about .offerText,
+  #root .background .App .content .about .aboutText,
+  #root .background .App .content .offer .offerText,
+  #root .background .App .content .offer .aboutText {
+    width: 65%;
+    height: 600px;
+    line-height: 1.6em;
+    padding: 30px 12% 50px 13%;
+    font-size: 1em;
+    margin: 0px auto 0px 12%;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 830px) and (max-height: 400px) and (orientation: landscape) {
+  #root .background .App .content .about .offerText,
+  #root .background .App .content .about .aboutText,
+  #root .background .App .content .offer .offerText,
+  #root .background .App .content .offer .aboutText {
+    overflow: auto;
+    height: 270px;
+    margin: 0px 27% 0px 25%;
+    padding: 10px 10% 30px 13%;
+  }
+}
+
+#root .background .App .content .about .offerText .offerTitle,
+#root .background .App .content .about .offerText .aboutTitle,
+#root .background .App .content .about .aboutText .offerTitle,
+#root .background .App .content .about .aboutText .aboutTitle,
+#root .background .App .content .offer .offerText .offerTitle,
+#root .background .App .content .offer .offerText .aboutTitle,
+#root .background .App .content .offer .aboutText .offerTitle,
+#root .background .App .content .offer .aboutText .aboutTitle {
+  font-size: 1.3rem;
+  color: black;
+}
+
+@media screen and (orientation: portrait) {
+  #root .background .App .content .about .offerText .offerTitle,
+  #root .background .App .content .about .offerText .aboutTitle,
+  #root .background .App .content .about .aboutText .offerTitle,
+  #root .background .App .content .about .aboutText .aboutTitle,
+  #root .background .App .content .offer .offerText .offerTitle,
+  #root .background .App .content .offer .offerText .aboutTitle,
+  #root .background .App .content .offer .aboutText .offerTitle,
+  #root .background .App .content .offer .aboutText .aboutTitle {
+    font-size: 1rem;
+  }
+}
+
+#root .background .App .content .about .offerText .txt,
+#root .background .App .content .about .aboutText .txt,
+#root .background .App .content .offer .offerText .txt,
+#root .background .App .content .offer .aboutText .txt {
+  white-space: pre-wrap;
+  hyphens: manual;
+  -moz-hyphens: manual;
+  -webkit-hyphens: manual;
+  line-height: 1.5em;
+  text-indent: 2em;
+  display: inline-block;
+}
+
+#root .background .App .content .about .offerText .txt::first-letter,
+#root .background .App .content .about .aboutText .txt::first-letter,
+#root .background .App .content .offer .offerText .txt::first-letter,
+#root .background .App .content .offer .aboutText .txt::first-letter {
+  font-size: 2.1em;
+  font-weight: 700;
+}
+
+#root .background .App .content #Container {
+  margin: 20px 10% 0px 4%;
+}
+
+#root .background .App .content #Container article {
+  font-size: 1rem;
+  width: 80%;
+  height: 610px;
+  overflow: auto;
+  text-align: left;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 0% 0% 0% 10%;
+  padding: 5% 10%;
+}
+
+@media screen and (min-device-width: 830px) and (max-width: 1550px) and (orientation: landscape) {
+  #root .background .App .content #Container article {
+    margin: 30px auto;
+    border-radius: 2px;
+    width: 60%;
+    height: 570px;
+    overflow-y: auto;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) and (orientation: portrait) {
+  #root .background .App .content #Container article {
+    margin: 30px 0px 30 0px;
+    font-size: 0.8rem;
+    border-radius: 3px;
+    width: 80%;
+    height: 630px;
+  }
+}
+
+@media screen and (min-device-width: 600px) and (max-width: 830px) and (orientation: landscape) {
+  #root .background .App .content #Container article {
+    font-size: 0.6em;
+    width: 60%;
+    height: 490px;
+  }
+  #root .background .App .content #Container article .program,
+  #root .background .App .content #Container article .links,
+  #root .background .App .content #Container article .cast {
+    text-align: left;
+    white-space: pre;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-device-width: 600px) and (max-width: 830px) and (orientation: landscape) and (min-device-width: 830px) and (max-width: 1550px) and (orientation: landscape) {
+  #root .background .App .content #Container article {
+    margin: 80px 2% 0px 10%;
+  }
+}
+
+@media screen and (min-device-width: 600px) and (max-width: 830px) and (orientation: landscape) {
+  #root .background .App .content #Container article .cast .performer {
+    line-height: .5em;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 830px) and (max-height: 400px) and (orientation: landscape) {
+  #root .background .App .content #Container article {
+    border-radius: 3px;
+    height: 240px;
+    width: 83%;
+    margin: 0% 0% 0% 20%;
+  }
+}
+
+#root .background .App .content #Container article .timeAndSpace p {
+  margin-bottom: 30px;
+  text-align: left;
+  font-size: 0.9em;
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) and (orientation: portrait) {
+  #root .background .App .content #Container article .timeAndSpace p {
+    font-size: 0.7em;
+  }
+}
+
+#root .background .App .content #Container article .projectName {
+  margin: auto;
+}
+
+#root .background .App .content #Container article .projectName #projectHeader {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) and (orientation: portrait) {
+  #root .background .App .content #Container article .projectName #projectHeader {
+    font-size: 0.9em;
+  }
+}
+
+#root .background .App .content #Container article .projectName #sessionHeader {
+  text-align: center;
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) and (orientation: portrait) {
+  #root .background .App .content #Container article .projectName #sessionHeader {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) and (orientation: portrait) {
+  #root .background .App .content #Container article .program .perfoHeader {
+    font-size: 0.7em;
+  }
+}
+
+#root .background .App .content #Container article .program .pieceTitle {
+  font-weight: 500;
+}
+
+#root .background .App .content #Container article .program p {
+  font-size: 1em;
+}
+
+#root .background .App .content #Container article .program p .piece {
+  font-size: 0.8em;
+}
+
+#root .background .App .content #Container article .program p .piece em {
+  font-size: 1.3em;
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) and (orientation: portrait) {
+  #root .background .App .content #Container article .links p#linksHeader {
+    font-size: 0.7em;
+  }
+}
+
+#root .background .App .content #Container article .links .link a {
+  text-decoration: none;
+  /* color:#BA7A0B; */
+  color: blue;
+}
+
+#root .background .App .content #Container article .cast p .castHeader {
+  line-height: .5em;
+  font-size: 0.9em;
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) and (orientation: portrait) {
+  #root .background .App .content #Container article .cast p .castHeader {
+    font-size: 0.2em;
+  }
+}
+
+#root .background .App .content #Container article .cast .performer {
+  line-height: 2em;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) and (orientation: portrait) {
+  #root .background .App .content #Container article .cast .performer {
+    font-size: .7em;
+  }
+}
+
+#root .background .App .content #Container article .memo {
+  text-indent: 1em;
+  margin: 30px;
+  text-align: justify;
+}
+
+#root .background .App .content #Container article .memo em {
+  font-weight: 500;
+  font-size: 0.7em;
+  line-height: 1em;
+}
+
+#root .background .App .content #Container article .memo p::first-letter {
+  font-size: 2.1em;
+  font-weight: 700;
+}
+
+#root .background .App .content .CV_select {
+  background-color: rgba(175, 196, 135, 0);
+  border-radius: 5px;
+}
+
+#root .background .App .content .CV_select .choose {
+  display: inline;
+  text-align: center;
+  padding-bottom: 20px auto;
+}
+
+#root .background .App .content .CV_select .choose .cvTitle {
+  margin: 0px;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) and (orientation: portrait) {
+  #root .background .App .content .CV_select .choose .cvTitle {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (min-device-width: 830px) and (max-width: 1550px) and (orientation: landscape) {
+  #root .background .App .content .CV_select .choose .cvTitle {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+@media screen and (min-device-width: 830px) and (max-width: 1550px) and (max-height: 400px) and (orientation: landscape) {
+  #root .background .App .content .CV_select .choose .cvTitle {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+#root .background .App .content .CV_select .choose #select {
+  color: white;
+  font-weight: 500;
+  border: none;
+  background-color: rgba(175, 196, 135, 0);
+}
+
+#root .background .App .content .CV_select .choose #select li[role="option"] {
+  color: #3513A1;
+}
+
+#root .background .App .content .CV_select .CV {
+  font-size: 1rem;
+  width: 60%;
+  overflow: auto;
+  padding-bottom: 20px;
+  margin: 5px auto;
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 1550px) {
+  #root .background .App .content .CV_select .CV {
+    height: 240px;
+  }
+}
+
+@media screen and (min-device-width: 830px) and (max-width: 1550px) {
+  #root .background .App .content .CV_select .CV {
+    height: 500px;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 830px) and (orientation: portrait) {
+  #root .background .App .content .CV_select .CV {
+    height: 200;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  #root .background .App .content .CV_select .CV {
+    font-size: 0.8rem;
+    width: 60%;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) and (orientation: portrait) {
+  #root .background .App .content .CV_select .CV {
+    height: 470px;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 830px) and (orientation: portrait) {
+  #root .background .App .content .CV_select .CV {
+    width: 80%;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 830px) and (max-height: 400px) and (orientation: landscape) {
+  #root .background .App .content .CV_select .CV {
+    height: 180px;
+    margin: 0px 25%;
+  }
+}
+
+@media screen and (min-device-width: 830px) and (max-width: 1550px) and (orientation: landscape) {
+  #root .background .App .content .CV_select .CV {
+    height: 550px;
+    width: 55%;
+    margin: 10px 4% 0px 26%;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 830px) and (max-height: 400px) and (orientation: landscape) {
+  #root .background .App .content .CV_select .CV {
+    height: 190px;
+    width: 65%;
+    margin: 0px 25% 0px 23%;
+  }
+}
+
+#root .background .App .content .CV_select .CV .property {
+  text-align: left;
+  border-radius: 2px;
+  padding: 1%;
+  margin: 2%;
+  color: black;
+  word-wrap: "break-word";
+}
+
+#root .background .App .content .CV_select .CV .property div:first-child {
+  font-weight: 900;
+  font-size: 1em;
+  text-align: left;
+}
+
+#root .background .App .content .CV_select .CV .property div.links p {
+  font-size: 0.7em;
+  font-weight: 500;
+}
+
+#root .background .App .content .CV_select .CV .property div.links .linkList .linkBox a {
+  text-decoration: none;
+}
+
+#root .background .App .content .CV_select .CV .property div[id*="obj"] {
+  padding: 10px;
+  margin: 10px;
+  color: black;
+  word-wrap: "break-word";
+}
+
+#root .background .App .content .CV_select .CV .property div[id*="obj"] .item {
+  font-size: 0.7em;
+}
+
+#root .background .App .content .CV_select .CV .property div[id*="obj"] .composers,
+#root .background .App .content .CV_select .CV .property div[id*="obj"] .performers,
+#root .background .App .content .CV_select .CV .property div[id*="obj"] .skills,
+#root .background .App .content .CV_select .CV .property div[id*="obj"] .frameworks,
+#root .background .App .content .CV_select .CV .property div[id*="obj"] .modules,
+#root .background .App .content .CV_select .CV .property div[id*="obj"] .libraries,
+#root .background .App .content .CV_select .CV .property div[id*="obj"] .intentions,
+#root .background .App .content .CV_select .CV .property div[id*="obj"] .use,
+#root .background .App .content .CV_select .CV .property div[id*="obj"] .useEnv,
+#root .background .App .content .CV_select .CV .property div[id*="obj"] .DAW,
+#root .background .App .content .CV_select .CV .property div[id*="obj"] .current,
+#root .background .App .content .CV_select .CV .property div[id*="obj"] .instruments {
+  font-size: 0.7em;
+  font-weight: 500;
+}
+
+#root .background .App .content .CV_select .CV .property div[id*="obj"] p[id*="email"],
+#root .background .App .content .CV_select .CV .property div[id*="obj"] p[id*="mobile"],
+#root .background .App .content .CV_select .CV .property div[id*="obj"] p[id*="city"] {
+  font-size: 0.8em;
+}
+
+#root .background .App .content .CV_select .CV .property div[id*="obj"] p[id*="employer"],
+#root .background .App .content .CV_select .CV .property div[id*="obj"] p[id*="school"],
+#root .background .App .content .CV_select .CV .property div[id*="obj"] p[id*="department"],
+#root .background .App .content .CV_select .CV .property div[id*="obj"] p[id*="course"],
+#root .background .App .content .CV_select .CV .property div[id*="obj"] [id*="lingua"] {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+#root .background .App .content .CV_select .CV .property div[id*="obj"] p[id*="department"] {
+  font-size: 0.8em;
+}
+
+#root .background .App .content .CV_select .CV .property div[id*="obj"] p[id*="period"],
+#root .background .App .content .CV_select .CV .property div[id*="obj"] p[id*="withinYears"] {
+  font-size: 0.9em;
+}
+
+#root .background .App .content .CV_select .CV .property div[id*="obj"] p[id*="workplace"] {
+  font-size: 0.8em;
+}
+
+#root .background .App .content .CV_select .CV .property div[id*="obj"] [id*="level"] {
+  font-size: 0.8em;
+}
+
+#root .background .App .content #recordings {
+  text-align: left;
+  border-radius: 2px;
+  padding: 1%;
+  margin: 40px auto;
+  color: black;
+  word-wrap: "break-word";
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 80%;
+  height: 500px;
+  overflow: auto;
+}
+
+#root .background .App .content #recordings div:first-child {
+  font-weight: 900;
+  font-size: 1em;
+  text-align: left;
+}
+
+#root .background .App .content #recordings div[id*="obj"] {
+  padding: 10px;
+  margin: 10px;
+  color: black;
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 830px) and (max-height: 400px) and (orientation: landscape) {
+  #root .background .App .content #recordings {
+    font-size: .8rem;
+    height: 213px;
+    width: 60%;
+    margin: 40px 25% auto 25%;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 830px) and (orientation: portrait) {
+  #root .background .App .content #recordings {
+    font-size: 0.7rem;
+    margin: 45px 0px 60px 27px;
+    height: 629px;
+    width: 70%;
+  }
+}
+
+@media screen and (min-device-width: 830px) and (max-width: 1550px) and (orientation: landscape) {
+  #root .background .App .content #recordings {
+    height: 536px;
+    width: 55%;
+    margin: 40px 4% 0px 26%;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 830px) and (max-height: 400px) and (orientation: landscape) {
+  #root .background .App .content #recordings {
+    height: 213px;
+    font-size: 0.8rem;
+  }
+  #root .background .App .content #recordings div[id*="obj"] p {
+    margin: 3px 0px;
+  }
+}
+
+#root .background .App .content #recordings div.links p {
+  white-space: pre;
+  font-size: 0.7em;
+  font-weight: 500;
+}
+
+#root .background .App .content #recordings div.links .linkList .linkBox a {
+  text-decoration: none;
+}
+
+#root .background .App .foot {
+  grid-area: foot;
+  background-color: transparent;
+  color: #BA7A0B;
+  border: none;
+  font-size: 0.7rem;
+  align-content: center;
+  position: relative;
+  left: 20px;
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 600px) and (orientation: portrait) {
+  #root .background .App .foot .footer {
+    text-align: right;
+    position: absolute;
+    bottom: 15px;
+    right: 15%;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 830px) and (max-height: 400px) and (orientation: landscape) {
+  #root .background .App .foot .footer {
+    text-align: right;
+    position: absolute;
+    bottom: 3%;
+    right: 14%;
+  }
+}
+
+@media screen and (min-device-width: 830px) and (max-width: 1550px) and (orientation: landscape) {
+  #root .background .App .foot .footer {
+    text-align: right;
+    position: absolute;
+    bottom: 3%;
+    right: 14%;
+  }
+}
+
+#root .background .App .aside {
+  background-color: transparent;
+  border: none;
+}

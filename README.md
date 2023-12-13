@@ -9,4 +9,4 @@
 
 #### Screen of general view:
  
-![alt modralova](https://github.com/Modralova/Modralova_site/screens/modralova_screen_1.png)
+![alt modralova](https://github.com/Modralova/Modralova_site/blob/master/screens/modralova_screen_1.png)

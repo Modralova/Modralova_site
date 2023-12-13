@@ -14,7 +14,7 @@ const MyProjects = () => {
     <div className="projects">
 
       <div className="titleStrip">
-        <p className="projectsTitle">ewenty:</p>
+        <p className="projectsTitle">eventy:</p>
       </div>
 
       <div className="projList">

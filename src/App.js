@@ -48,6 +48,8 @@ const theme = createTheme({
 function App() {
 
 
+
+
   if (cookies.PHPSESSID === sessionStorage.getItem("SESS_ID")) {
 
     store.dispatch(login);
@@ -91,21 +93,20 @@ function App() {
           <div className="mainBox">
 
 
-            {/* <div className="aside"> </div> */}
+       
 
-            <div className="content"> 
+            <div className="content">
+              <Switch>
+                <Route path="/:id">
+                  <Project />
+                </Route>
+              </Switch>
 
               <Switch>
                 <Route exact path="/">
-                  {/* <Component /> */}
                   <Home />
                 </Route>
-                <Route path="/project/:id">
-                  <div className="projectContainer">
-                    <Project />
-                  </div>
-                </Route>
-                <Route path="/about">
+                <Route exact path="/about">
                   <About />
                 </Route>
                 <Route path="/offer">
@@ -148,7 +149,7 @@ function App() {
 
 
         </div>   {/* App */}
-        {/* </Paper> */}
+
 
       </Router>
 

@@ -25,7 +25,13 @@ const MyProjects = () => {
             <Paper key={one.id} id={`project.${i}`} elevation={24}>
 
 
-              <Link to={`/project/${one.id}`}>
+              <Link to={`/${one.id}`} 
+     
+               
+            
+              
+              
+              >
 
                 {Array.isArray(one.city) &&
 
